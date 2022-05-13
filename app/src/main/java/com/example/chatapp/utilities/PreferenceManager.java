@@ -20,13 +20,14 @@ public class PreferenceManager {
         return sharedPreferences.getBoolean(key, false);
     }
 
-    public void putString(String Value, String Key) {
+    public void putString(String key, String Value) {
         SharedPreferences.Editor editor = sharedPreferences.edit();
-        editor.putString(Key, Value);
+        editor.putString(key, Value);
+        editor.apply();
     }
 
     public String getString(String key) {
-        return sharedPreferences.getString( key, null);
+        return sharedPreferences.getString(key, null);
     }
 
     public void clear() {
@@ -34,7 +35,6 @@ public class PreferenceManager {
         editor.clear();
         editor.apply();
     }
-
 
 
 }
